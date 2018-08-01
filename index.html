@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+
+<html class="no-js"  lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="images/favicon.jpg" type="image/x-icon">
+<title>Chris Doran</title>
+
+<link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/bebusneuebold" type="text/css"/>
+<!-- Normalize -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
+<link rel="stylesheet" href="css/assets/normalize.css" type="text/css">
+
+<link href="css/ionicons.min.css" rel="stylesheet" type="text/css">
+
+<!-- Bootstrap -->
+
+<link href="css/assets/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+<!-- Font-awesome.min -->
+
+<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+<!-- Effet -->
+
+<link rel="stylesheet" href="css/gallery/foundation.min.css"  type="text/css">
+<link rel="stylesheet" type="text/css" href="css/gallery/set1.css" />
+
+<!-- Main Style -->
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+
+<link rel="stylesheet" href="css/main.css" type="text/css">
+
+<!-- Responsive Style -->
+
+<link href="css/responsive.css" rel="stylesheet" type="text/css">
+
+<script src="https://unpkg.com/ionicons@4.2.4/dist/ionicons.js"></script>
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+
+<!--[if lt IE 9]>
+
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+    <![endif]-->
+
+<script src="js/assets/modernizr-2.8.3.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">    
+    var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 6) || 1000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+        }
+
+        setTimeout(function() {
+        that.tick();
+        }, delta);
+    };
+
+    window.onload = function() {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #2F3036}";
+        document.body.appendChild(css);
+    };
+
+    $(function() {
+      $('a[href*=#]').on('click', function(e) {
+        e.preventDefault();
+        $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 500, 'linear');
+      });
+    });
+    </script>
+
+
+</head>
+
+<body>
+
+<!-- header -->
+
+<!-- <header id="header" class="header">
+  <div class="container-fluid">
+    <hgroup> 
+      
+      <h1> <a href="index1.html" title="Picxa"><img src="images/logo.png" alt="Picxa" title="Picxa"/></a> </h1>
+      
+      
+      <nav>
+        <div class="menu-expanded">
+          <div class="nav-icon">
+            <div id="menu" class="menu"></div>
+            <p>menu</p>
+          </div>
+          <div class="cross"> <span class="linee linea1"></span> <span class="linee linea2"></span> <span class="linee linea3"></span> </div>
+          <div class="main-menu">
+            <ul>
+              <li class="active"><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="blog.html">blog</a></li>
+              <li><a href="contact.html">contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+    </hgroup>
+  </div>
+</header> -->
+
+<!-- header -->
+
+<main class="main-wrapper" id="container"> 
+  
+  <!-- image Gallery -->
+
+  <div id="pop" style="background-image: url(images/paper.jpg);">
+    <div id="intro" class="container-fluid">
+        <h1 class="text-center">chris<b>doran</b></h1>
+        <h4 class="text-center text-capitalize">
+            <a href="" class="typewrite" data-period="2000" data-type='[ "Digital Creative.", "Copywriter.", "Content Creator.", "Lord of the Rings fan." ]'>
+                <span class="wrap"></span>
+            </a>
+        </h4>
+
+        <!-- <h4 class="text-center text-capitalize">Digital Creative, Copywriter & Content Creator</h4> -->
+            <ul class="text-center list-inline" style="margin-left: 5px;">
+                <li>
+                  <a href="https://www.facebook.com/chris.doran.16" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/chris-doran-971976a2/" target="_blank">
+                      <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/doranchri/?hl=en" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                </li>
+            </ul>
+        <div id ="buttons" class="row">
+            <!-- Download & Contact Button -->
+            <div class="col col-xs-12 col-sm-12 col-md-12 text-center">              
+                <a href="cv/CV.pdf" download="cv-file.docx" class="button2">Download CV</a>
+                <a type="button" class="button2" data-toggle="modal" data-target="#myModal"> &nbsp; Contact Me &nbsp;</a>
+            </div>
+        </div>
+
+
+
+        <div id="iconList" class="container">                   
+
+        </div>
+        
+        <div id="test" class="text-center">                   
+           <h2>Portfolio</h2>
+           <i class="fas fa-long-arrow-alt-down fa-lg"></i>          
+        </div>
+    </div>
+  </div>
+
+  <div class="wrapper">
+    <div class="">
+      <!-- <h1 class="text-center text-capitalize">Portfolio </h1> -->
+      <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-3 masonry">
+        <li class="masonry-item grid">
+          <figure class="effect-sarah"> <img src="images/adshell1.jpg" alt="" />
+            <figcaption>
+              <h2>Smokefree <span>NZ</span></h2>
+              <p>National Adshell & billboard anti-smoking campaign</p>
+              <a data-toggle="modal" data-target="#myModal5">View more</a> </figcaption>
+          </figure>
+        </li>
+        <li class="masonry-item grid">
+          <figure class="effect-sarah"> <img src="images/SamBrandMockup.jpg" alt="" />
+            <figcaption>
+              <h2>Politician <span>Sam</span></h2>
+              <!-- <h3>Branding, Marketing & Creative Direction</h3> -->
+              <p>New Zealand's first virtual politician</p>
+              <a data-toggle="modal" data-target="#myModal4">View more</a> </figcaption>
+          </figure>
+        </li>
+        <!-- <li class="masonry-item grid">
+
+          <figure class="effect-sarah"> 
+            <img src="images/adshell4.jpg" alt="" />
+              <figcaption>
+                <h2>Photo <span>Title</span></h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <a href="details.html">View more</a> 
+              </figcaption>
+          </figure>
+        </li> -->
+        <li class="masonry-item grid">
+          <figure class="effect-sarah"> <img src="images/HowToSave.jpg" alt="" />
+            <figcaption>
+              <h2>Smokefree <span>NZ</span></h2>
+              <p class="description">National digital campaign</p>
+              <a data-toggle="modal" data-target="#myModal1">View more</a> </figcaption>
+          </figure>
+          
+        </li>
+        <li class="masonry-item grid">
+          <figure class="effect-sarah"> 
+            <img src="images/nowYourInTheGame.jpg" alt="" />
+            <figcaption>
+              <h2>TAB <span>NZ</span></h2>
+              <p class="description">National Digital & Outdoor campaign</p>
+              <a data-toggle="modal" data-target="#myModal2">View more</a> </figcaption>
+          </figure>
+        </li>
+        <li class="masonry-item grid">
+          <figure class="effect-sarah"> <img src="images/westfield.jpg" alt="" />
+            <figcaption>
+              <h2>TAB <span>NZ</span></h2>
+              <p class="description">National Digital & Outdoor campaign</p>
+              <a data-toggle="modal" data-target="#myModal3">View more</a> </figcaption>
+          </figure>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</main>
+
+<!-- Image Gallery --> 
+
+<!-- footer -->
+
+
+
+<div id="myModal1" class="modal" tabindex="-1" role="dialog" style="padding-left: 0px;">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content animated zoomIn">        
+          <div class="row">
+              <main class="main-wrapper-inner" id="container" style="margin: 30px;">
+
+              <div class="container" style="width: auto; padding-left: 0px; padding-right: 0px;">
+                    <!-- <a href="index1.html" ><i class="fas fa-home fa-2x"></i></a> -->
+                      <!-- details-image -->
+                         <img src="images/SBYSDigital.jpg" alt="" style="max-width: 100%; margin-bottom: 35px;" />
+                        <!-- details-image -->
+                        <!-- content -->
+                        <div class="details-content">
+                          <!-- left -->
+                          <section class="col-sm-12 col-md-4 col-xs-12">
+                              <header>
+                                  <h3>Smokefree NZ - Digital & Social Media</h3>
+                                    <h4>Freelance Creative, Designer, Director & Editor</h4>
+                                    <h5>GSL Promotus</h5>
+                                </header>
+                            </section>
+                            <!-- left -->
+                            <!-- right -->
+                            <section class="col-sm-12 col-md-8 col-xs-12">
+                              <p> Working with Smokefree NZ I worked to bring smokefree messages to an online audience through bite sized 6-15 second videos and snapchat filters. 
+                                </p>
+                                <p>Our largest challenge was approaching YouTube's pre-roll ads in a way that would convey a simple message even if the video was skipped. Our solution was to assume that the videos would be skipped. We created a huge variety of 6 second unskippable clips, and two skippable 15 Second clips that were encouraging the audience to skip. 
+                                </p>                             
+                            </section>
+                            <!-- right -->
+                        </div>
+                        <!-- content -->
+                        <!-- details-image -->
+
+                        <figure class="details-image">
+                            <div class="container" style="background-color: #F8F8F8; max-width: 100%; padding-bottom: 10%">
+                                <div class="row" style="padding-left:15%; padding-right:15%; padding-top:5%;">
+                                    <div class="col-sm-12 col-md-12 col-xs-12 text-center">
+                                    <div class="col-sm-12 col-md-12 col-xs-12 text-center">
+                                        <img src="images/youtube.png" alt="" class="img-responsive" style="max-width: 110px; display: inline; padding-bottom: 5%" />
+                                    </div>  
+                                    </div> 
+                                    <div class="col-sm-12 col-md-6 col-xs-12 text-center">
+                                        <video autoplay muted loop id="phoneVid">
+                                            <source src="images/HowToSave.mp4" type="video/mp4">
+                                        </video> 
+                                    </div>                                  
+                                <!-- left -->   
+                                <!-- left -->
+                                <!-- right -->
+                                    <div id="cheek" class="col-sm-12 col-md-6 col-xs-12 text-center">
+                                        <video autoplay muted loop id="phoneVid">
+                                            <source src="images/HowToExercise.mp4" type="video/mp4">
+                                        </video>      
+                                    </div>
+
+                                    <div id="cheek" class="col-sm-12 col-md-12 col-xs-12 text-center">
+                                        <video autoplay muted loop id="phoneVid">
+                                            <source src="images/HowToWalk.mp4" type="video/mp4">
+                                        </video>      
+                                    </div>
+                                    <div class="col-sm-12 col-md-6 col-xs-12 text-center">
+                                        <video autoplay muted loop id="phoneVid">
+                                            <source src="images/HowToNap.mp4" type="video/mp4">
+                                        </video> 
+                                    </div>                                  
+                                <!-- left -->   
+                                <!-- left -->
+                                <!-- right -->
+                                    <div id="cheek" class="col-sm-12 col-md-6 col-xs-12 text-center">
+                                        <video autoplay muted loop id="phoneVid">
+                                            <source src="images/EAGames.mp4" type="video/mp4">
+                                        </video>      
+                                    </div>
+                                    <div id="cheek" class="col-sm-12 col-md-12 col-xs-12 text-center">
+                                        <video autoplay muted loop id="phoneVid">
+                                            <source src="images/skip.mp4" type="video/mp4">
+                                        </video>      
+                                    </div>
+                                </div>
+                                <!-- right -->
+                            </div>
+                        </figure>
+                        
+                        <figure class="details-image">
+                            <div class="container" style="background-color: #fffc00; max-width: 100%">
+                                <div class="row" style="padding-left:20%; padding-right:20%; padding-top:5%;">
+                                    <div class="col-sm-12 col-md-12 col-xs-12 text-center">
+                                    <div class="col-sm-12 col-md-12 col-xs-12 text-center">
+                                        <img src="images/snapchat.png" alt="" class="img-responsive" style="max-width: 50px; display: inline; padding-bottom: 5%" />
+                                    </div>  
+                                    </div> 
+                                    <div class="col-sm-6 col-md-6 col-xs-6 text-center">
+                                        <video autoplay muted loop id="phoneVid">
+                                            <source src="images/SBYSSnapchatHowTo2.mp4" type="video/mp4">
+                                        </video> 
+                                    </div>                                  
+                                <!-- left -->   
+                                <!-- left -->
+                                <!-- right -->
+                                    <div id="cheek" class="col-sm-6 col-md-6 col-xs-6 text-center">
+                                        <video autoplay muted loop id="phoneVid">
+                                            <source src="images/SBYSSnapchatHowTo1.mp4" type="video/mp4">
+                                        </video>      
+                                    </div>
+                                </div>
+                                <!-- right -->
+                            </div>
+                        </figure>
+                        <figure class="details-image">
+                            <div class="container" style="background-color: #fffc00; max-width: 100%">
+                                <div class="row" style="padding-left:20%; padding-right:20%; padding-top:5%; padding-bottom: 10%">
+                                    <div class="col-sm-6 col-md-6 col-xs-6 text-center">
+                                        <img src="images/snapchatExample.png" alt="" class="img-responsive"/>
+                                    </div>                                  
+                                <!-- left -->   
+                                <!-- left -->
+                                <!-- right -->
+                                    <div class="col-sm-6 col-md-6 col-xs-6 text-center">
+                                        <img src="images/snapchatExample1.png" alt="" class="img-responsive"/>
+                                    </div>
+                                </div>
+                                <!-- right -->
+                            </div>
+                        </figure>
+
+
+                        
+                        <!-- details-image -->
+                        <!-- details-image -->
+                     <a type="button" class="button2" data-dismiss="modal" style="text-align: center; display: block; margin-top: 15px;"> &nbsp; Close &nbsp;</a>   
+                     <!-- <button data-dismiss="modal" class="button2">Close</button> -->
+                </div>
+            </main>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div id="myModal2" class="modal" tabindex="-1" role="dialog" style="padding-left: 0px;">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content animated zoomIn">        
+          <div class="row">
+              <main class="main-wrapper-inner" id="container" style="margin: 30px;">
+
+              <div class="container" style="width: auto; padding-left: 0px; padding-right: 0px;">
+                    <!-- <a href="index1.html" ><i class="fas fa-home fa-2x"></i></a> -->
+                      <!-- details-image -->
+                         <video autoplay muted loop id="myVideo"  style=" max-width: 100%; margin-bottom: 35px;">
+                              <source src="images/tennis2.mp4" type="video/mp4">
+                            </video>
+                        <!-- details-image -->
+                        <!-- content -->
+                        <div class="details-content">
+                          <!-- left -->
+                          <section class="col-sm-4 col-md-4 col-xs-4">
+                              <header>
+                                  <h3>TAB - Digtal Ads & Outdoor Billboards</h3>
+                                    <h4>Freelance Designer</h4>
+                                    <h5>TAB</h5>
+                                </header>
+                            </section>
+                            <!-- left -->
+                            <!-- right -->
+                            <section class="col-sm-8 col-md-8 col-xs-8">
+                              <p>Working as a freelance digital motion graphics designer I got the chance to help with some of the design for TAB's latest "Now You're in the Game" campaign. This spanned typography and composition for online and outdoor placements and motion graphics and web development for a series of online banners. 
+                                </p>
+                                <p>Conceptually, the rebranding focused on the idea that placing small bets on sports games can create a feeling of tension, excitement and involvement. The designs needed to reflect this by being close, clean and visceral. 
+                                </p>                                
+                            </section>
+                            <!-- right -->
+                        </div>
+                        <!-- content -->
+                        <!-- details-image -->
+                        <figure class="details-image">
+                            <div class="container" style="background-color: #FFF; max-width: 100%">
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-12 col-xs-12 text-center">
+                                        <img src="images/tabTennis.jpg" alt="" class="img-responsive"/>
+                                    </div>
+                                </div>
+                                <!-- right -->
+                            </div>
+                        </figure>
+                        <figure class="details-image">
+                            <div class="container" style="background-color: #FFF; max-width: 100%; padding-top:5%;">
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-12 col-xs-12 text-center">
+                                        <img src="images/tab2.jpg" alt="" class="img-responsive"/>
+                                    </div>
+                                </div>
+                                <!-- right -->
+                            </div>
+                        </figure>
+                        <figure class="details-image">
+                            <div class="container" style="background-color: #FFF; max-width: 100%; padding-top:5%;">
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-12 col-xs-12 text-center">
+                                        <img src="images/tab3.jpg" alt="" class="img-responsive"/>
+                                    </div>
+                                </div>
+                                <!-- right -->
+                            </div>
+                        </figure>
+                        <figure class="details-image">
+                          <div class="container" style="background-color: #FFF; max-width: 100% ">
+                                <div class="row" style="padding-top:5%;">
+                                    <div id="mobileImage" class="col-sm-6 col-md-8 col-xs-12 text-center">
+                                        <img src="images/streetPoster.jpg" alt="" class="img-responsive"/>
+                                    </div>                                  
+                                <!-- left -->   
+                                <!-- left -->
+                                <!-- right -->
+                                    <div id="mobileImage" class="col-sm-6 col-md-4 col-xs-12 text-center">
+                                        <video autoplay muted loop id="phoneVid">
+                                            <source src="images/tab300x600.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                    <div id="mobileImage" class="col-sm-6 col-md-4 col-xs-12 text-center">
+                                       <video autoplay muted loop id="phoneVid">
+                                            <source src="images/tab300x250.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                </div>
+                                <!-- right -->
+                            </div>                          
+                        </figure>
+                        <figure class="details-image">
+                            <div class="container" style="background-color: #FFF; max-width: 100% ">
+                                <div class="row" style="padding-left:5%; padding-right:5%; padding-top:5%;">
+                                    <div id="long" class="col-sm-12 col-md-12 col-xs-12 text-center">
+                                        <iframe src="images/Tab/728x90/728x90.html" name="targetframe2" allowTransparency="true" scrolling="no" frameborder="0" style="width: 728px; height:90px" onclick="onClick(this)">
+                                        </iframe>
+                                    </div>
+                                </div>
+                                <!-- right -->
+                            </div>                          
+                        </figure>
+
+
+                        
+                        <!-- details-image -->
+                        <!-- details-image -->
+                     <a type="button" class="button2" data-dismiss="modal" style="text-align: center; display: block; margin-top: 15px;"> &nbsp; Close &nbsp;</a>   
+                     <!-- <button data-dismiss="modal" class="button2">Close</button> -->
+                </div>
+            </main>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+<div id="myModal3" class="modal" tabindex="-1" role="dialog" style="padding-left: 0px;">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content animated zoomIn">        
+          <div class="row">
+              <main class="main-wrapper-inner" id="container" style="margin: 30px;">
+
+              <div class="container" style="width: auto; padding-left: 0px; padding-right: 0px;">
+                    <!-- <a href="index1.html" ><i class="fas fa-home fa-2x"></i></a> -->
+                      <!-- details-image -->
+                      <img src="images/westfieldDetails.jpg" alt="" style="max-width: 100%; margin-bottom: 35px;" />
+                        <!-- details-image -->
+                        <!-- content -->
+                        <div class="details-content">
+                          <!-- left -->
+                          <section class="inner-left">
+                              <header>
+                                  <h3>Westfield - Digtal Banner Ads</h3>
+                                    <h4>Freelance Designer</h4>
+                                    <h5>Westfield</h5>
+                                </header>
+                            </section>
+                            <!-- left -->
+                            <!-- right -->
+                            
+                            <!-- right -->
+                        </div>
+                        <!-- content -->
+                        <!-- details-image -->
+                        
+                        <figure class="details-image">
+                          <div class="container" style="background-color: #FFF; max-width: 100% ">
+                                <div class="row" style="padding-left:5%; padding-right:5%; ">
+                                    
+                                    <div id="cheek" class="col-sm-6 col-md-4 col-xs-12 text-center">
+                                        <img src="images/300x600White.png" alt="" style="max-width: 100%; padding-bottom: 5%;" />
+                                    </div>
+                                    <div id="cheek" class="col-sm-6 col-md-4 col-xs-12 text-center">
+                                        <img src="images/300x600Blue.jpg" alt="" style="max-width: 100%; padding-bottom: 5%;" />
+                                    </div>
+                                    <div id="cheek" class="col-sm-6 col-md-4 col-xs-12 text-center">
+                                        <img src="images/300x600Pink.png" alt="" style="max-width: 100%; padding-bottom: 5%;" />
+                                    </div>
+                                </div>
+                                <!-- right -->
+                            </div>                          
+                        </figure>
+                        <figure class="details-image">
+                            <div class="container" style="background-color: #FFF; max-width: 100% ">
+                                <div class="row" style="padding-left:5%; padding-right:5%; padding-top:5%;">
+                                    
+                                    <div id="cheek" class="col-sm-6 col-md-4 col-xs-12 text-center">
+                                        <img src="images/300x250White.png" alt="" style="max-width: 100%; padding-bottom: 5%;" />
+                                    </div>
+                                    <div id="cheek" class="col-sm-6 col-md-4 col-xs-12 text-center">
+                                        <img src="images/300x250Blue.png" alt="" style="max-width: 100%; padding-bottom: 5%;" />
+                                    </div>
+                                    <div id="cheek" class="col-sm-6 col-md-4 col-xs-12 text-center">
+                                        <img src="images/300x250Pink.png" alt="" style="max-width: 100%; padding-bottom: 5%;" />
+                                    </div>
+                                </div>
+                                <!-- right -->
+                            </div>                          
+                        </figure>
+                        <!-- details-image -->
+                     <a type="button" class="button2" data-dismiss="modal" style="text-align: center; display: block; margin-top: 15px;"> &nbsp; Close &nbsp;</a>   
+                     <!-- <button data-dismiss="modal" class="button2">Close</button> -->
+                </div>
+            </main>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div id="myModal4" class="modal" tabindex="-1" role="dialog" style="padding-left: 0px;">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content animated zoomIn">        
+          <div class="row">
+              <main class="main-wrapper-inner" id="container" style="margin: 30px;">
+
+              <div class="container" style="width: auto; padding-left: 0px; padding-right: 0px;">
+                    <!-- <a href="index1.html" ><i class="fas fa-home fa-2x"></i></a> -->
+                      <!-- details-image -->
+                      <figure class="details-image" style="padding-bottom: 35px;">
+                          <video autoplay muted loop id="myVideo"  style=" max-width: 100%;">
+                              <source src="images/SamLogo.mp4" type="video/mp4">
+                            </video>
+                        </figure>
+                        <!-- details-image -->
+                        <!-- content -->
+                        <div class="details-content">
+                          <!-- left -->
+                          <section class="col-sm-4 col-md-4 col-xs-4">
+                              <header>
+                                  <h3>Politician Sam</h3>
+                                    <h4>Creative Director</h4>
+                                    <h5>Virtual Politician Project</h5>
+                                </header>
+                            </section>
+                            <!-- left -->
+                            <!-- right -->
+                            <section class="col-sm-8 col-md-8 col-xs-8">
+                              <p> <a href="http://www.politiciansam.nz/index.html" style="font-weight: 500; text-decoration: underline;">Politician Sam</a> is a project aiming to create a virtual politician for a future NZ election. By using a natural language conversation system and machine learning techniques, Sam can <a href="http://www.politiciansam.nz/chat.html" style="font-weight: 500; text-decoration: underline;"> chat </a> to and learn from users across most social media sites.</p>
+                                <p>As creative director I worked alongside a team of designers and developers to develope the technology for Sam to function as well as creating a recognisable brand. The project was featured at New Zealands D5 technology summit, allowing key members of New Zealands pariament, including Jacinda Ardern, a chance to test our technology.</p>                                
+                            </section>
+                            <!-- right -->
+                        </div>
+                        <!-- content -->
+                        <!-- details-image -->
+                        <figure class="details-image">
+                          <img src="images/colorLogo.jpg" alt="" class="img-responsive"/>
+                        </figure>
+                        <figure class="details-image">
+                            <div class="container" style="background-color: #454554; max-width: 100%">
+                                <div class="row" style="padding-left:20%; padding-right:20%; padding-top:10%; padding-bottom: 10%">
+                                    <div class="col-sm-6 col-md-6 col-xs-6 text-center">
+                                        <img src="images/phoneWeb.png" alt="" class="img-responsive"/>
+                                    </div>                                  
+                                <!-- left -->   
+                                <!-- left -->
+                                <!-- right -->
+                                    <div id="cheek" class="col-sm-6 col-md-6 col-xs-6 text-center">
+                                        <video autoplay muted loop id="phoneVid">
+                                            <source src="images/phone.mp4" type="video/mp4">
+                                        </video>      
+                                    </div>
+                                </div>
+                                <!-- right -->
+                            </div>
+                        </figure>
+                        <!-- details-image -->
+                        <!-- details-image -->
+                        <figure class="details-image">
+                          <img src="images/samD5.jpg" alt="" class="img-responsive"/>
+                        </figure>
+                        <figure class="details-image">
+                            <img src="images/booth.jpg" alt="" class="img-responsive"/>
+                        </figure>
+                        <!-- details-image -->
+                        <figure class="details-image">
+                            <img src="images/Sam.jpg" alt="" class="img-responsive"/>
+                        </figure>
+                        <!-- details-image -->
+                     <a type="button" class="button2" data-dismiss="modal" style="text-align: center; display: block; margin-top: 15px;"> &nbsp; Close &nbsp;</a>   
+                     <!-- <button data-dismiss="modal" class="button2">Close</button> -->
+                </div>
+            </main>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div id="myModal5" class="modal" tabindex="-1" role="dialog" style="padding-left: 0px;">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content animated zoomIn">        
+          <div class="row">
+              <main class="main-wrapper-inner" id="container" style="margin: 30px;">
+
+              <div class="container" style="width: auto; padding-left: 0px; padding-right: 0px;">
+                    <!-- <a href="index1.html" ><i class="fas fa-home fa-2x"></i></a> -->
+                      <!-- details-image -->
+                      <div style="background-color: #231f20; margin-bottom: 35px;">                       
+                          <div>
+                              <img src="images/SBYS.png" alt="" class="center"/>
+                            </div>
+                        </div>
+                        <!-- details-image -->
+                        <!-- content -->
+                        <div class="details-content">
+                          <!-- left -->
+                          <section class="col-sm-4 col-md-4 col-xs-4">
+                              <header>
+                                  <h3>Smokefree NZ - Out of Home</h3>
+                                    <h4>Creative/Copywriter/Designer</h4>
+                                    <h5>Health Promotion Agency</h5>
+                                </header>
+                            </section>
+                            <!-- left -->
+                            <!-- right -->
+                            <section class="col-sm-8 col-md-8 col-xs-8">
+                              <p>Working with Smokefree NZ through GSL Promotus had me developing messaging for the new campaign "Stop Before you Start." A campaign focusing on stopping the transition beteween social smoking and regular smoking.</p>
+                                <p></p>                                
+                            </section>
+                            <!-- right -->
+                        </div>
+                        <!-- content -->
+                        <!-- details-image -->
+                        <figure class="details-image">
+                          <div class="container" style="background-color: #FFF; max-width: 100%">
+                                <div class="row" style="padding-left:5%; padding-right:5%; padding-top:5%;">
+                                    <div class="col-sm-6 col-md-6 col-xs-12 text-center">
+                                        <img src="images/adshell1.jpg" alt="" class="img-responsive" style="margin-bottom: 5%;" />
+                                    </div>                                  
+                                <!-- left -->   
+                                <!-- left -->
+                                <!-- right -->
+                                    <div id="cheek" class="col-sm-6 col-md-6 col-xs-12 text-center">
+                                        <img src="images/adshell4.jpg" alt="" class="img-responsive" style="margin-bottom: 5%;"/>
+                                    </div>
+                                </div>
+                                <!-- right -->
+                            </div>                          
+                        </figure>
+                        <figure class="details-image">
+                            <div class="container" style="background-color: #FFF; max-width: 100%">
+                                <div class="row" style="padding-left:5%; padding-right:5%;">
+                                    <div class="col-sm-6 col-md-6 col-xs-12 text-center">
+                                        <img src="images/adshell3.jpg" alt="" class="img-responsive"/ style="margin-bottom: 5%;">
+                                    </div>                                  
+                                <!-- left -->   
+                                <!-- left -->
+                                <!-- right -->
+                                    <div id="cheek" class="col-sm-6 col-md-6 col-xs-12 text-center">
+                                        <img src="images/adshell2.jpg" alt="" class="img-responsive"/ style="margin-bottom: 5%;">
+                                    </div>
+                                </div>
+                                <!-- right -->
+                            </div>
+                        </figure>
+                        <!-- details-image -->
+                     <a type="button" class="button2" data-dismiss="modal" style="text-align: center; display: block; margin-top: 15px;"> &nbsp; Close &nbsp;</a>   
+                     <!-- <button data-dismiss="modal" class="button2">Close</button> -->
+                </div>
+            </main>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div id="myModal" class="modal" tabindex="-1" role="dialog" style="padding-left: 0px;">
+    <div class="modal-dialog modal-sm ">
+      <div class="modal-content animated zoomIn">        
+          <div class="row">
+              <main class="main-wrapper-inner" id="container" style="margin: 30px;">
+
+              <div class="container" style="width: auto; padding-left: 0px; padding-right: 0px;">
+                    <!-- <a href="index1.html" ><i class="fas fa-home fa-2x"></i></a> -->
+                      <!-- details-image -->
+                      <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+
+                    </button>
+                     <h4 class="modal-title text-center" id="myModalLabel">Contact Me</h4>
+
+                </div>
+                <div class="modal-body">
+                <!-- Contact Info -->                          
+                    <div class="info card">
+                        <!-- Apply your own info here -->
+                        <ul class="text-center" style="padding-left: 0px">
+                            <li>
+                                <i class="fas fa-phone center-block"></i>
+                                <p>+64 - 27 -873 - 3497</p>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <p>Chris.Thomas.Doran@gmail.com</p>
+                            </li>
+                        </ul>                                                   
+                  </div>
+                </div>
+                <div class="modal-footer">                    
+                </div>
+                        <!-- details-image -->
+                        
+                     <!-- <button data-dismiss="modal" class="button2">Close</button> -->
+                </div>
+            </main>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="vertical-alignment-helper">
+        <div class="modal-dialog vertical-align-center">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+
+                    </button>
+                     <h4 class="modal-title text-center" id="myModalLabel">Contact Me</h4>
+
+                </div>
+                <div class="modal-body">
+                <!-- Contact Info -->                          
+                    <div class="info card">
+                        <!-- Apply your own info here -->
+                        <ul class="text-center" style="padding-left: 0px">
+                            <li>
+                                <i class="fas fa-phone center-block"></i>
+                                <p>+64 - 27 -873 - 3497</p>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <p>Chris.Thomas.Doran@gmail.com</p>
+                            </li>
+                        </ul>                                                   
+                  </div>
+                </div>
+                <div class="modal-footer">                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- footer --> 
+
+<!-- jQuery --> 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script> 
+<script>window.jQuery || document.write('<script src="js/assets/jquery.min.js"><\/script>')</script> 
+<script src="js/assets/plugins.js" type="text/javascript"></script> 
+<script src="js/assets/bootstrap.min.js" type="text/javascript"></script> 
+<!-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>  -->
+<!-- <script src="js/maps.js" type="text/javascript"></script>  -->
+<script src="js/custom.js" type="text/javascript"></script> 
+<script src="js/jquery.contact.js" type="text/javascript"></script> 
+<script src="js/main.js" type="text/javascript"></script> 
+<script src="js/gallery/masonry.pkgd.min.js" type="text/javascript"></script> 
+<script src="js/gallery/imagesloaded.pkgd.min.js" type="text/javascript"></script> 
+<script src="js/gallery/jquery.infinitescroll.min.js" type="text/javascript"></script> 
+<script src="js/gallery/main.js" type="text/javascript"></script> 
+<script src="js/jquery.nicescroll.min.js" type="text/javascript"></script>
+</body>
+</html>
