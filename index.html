@@ -53,6 +53,14 @@
 <script src="js/assets/modernizr-2.8.3.min.js" type="text/javascript"></script>
 
 <script type="text/javascript">  
+
+    $('.modal-dialog').on("show.bs.modal", function () {
+    $('.lazy_load').each(function(){
+        var img = $(this);
+        img.attr('src', img.data('src'));
+        console.log("test");
+    });
+    });   
     
     var TxtType = function(el, toRotate, period) {
         this.toRotate = toRotate;
@@ -323,7 +331,7 @@
                                     </div>  
                                     </div> 
                                     <div class="col-sm-12 col-md-6 col-xs-12 text-center">
-                                        <video mute autoplay" loop id="phoneVid">
+                                        <video  autoplay muted loop id="phoneVid">
                                             <source src="images/HowToSave.mp4" type="video/mp4">
                                         </video> 
                                     </div>                                  
@@ -331,18 +339,18 @@
                                 <!-- left -->
                                 <!-- right -->
                                     <div id="cheek" class="col-sm-12 col-md-6 col-xs-12 text-center">
-                                        <video mute autoplay" loop id="phoneVid">
+                                        <video  autoplay muted loop id="phoneVid">
                                             <source src="images/HowToExercise.mp4" type="video/mp4">
                                         </video>      
                                     </div>
 
                                     <div id="cheek" class="col-sm-12 col-md-12 col-xs-12 text-center">
-                                        <video mute autoplay" loop id="phoneVid">
+                                        <video  autoplay muted loop id="phoneVid">
                                             <source src="images/HowToWalk.mp4" type="video/mp4">
                                         </video>      
                                     </div>
                                     <div class="col-sm-12 col-md-6 col-xs-12 text-center">
-                                        <video mute autoplay" loop id="phoneVid">
+                                        <video  autoplay muted loop id="phoneVid">
                                             <source src="images/HowToNap.mp4" type="video/mp4">
                                         </video> 
                                     </div>                                  
@@ -350,12 +358,12 @@
                                 <!-- left -->
                                 <!-- right -->
                                     <div id="cheek" class="col-sm-12 col-md-6 col-xs-12 text-center">
-                                        <video mute autoplay" loop id="phoneVid">
+                                        <video  autoplay muted loop id="phoneVid">
                                             <source src="images/EAGames.mp4" type="video/mp4">
                                         </video>      
                                     </div>
                                     <div id="cheek" class="col-sm-12 col-md-12 col-xs-12 text-center">
-                                        <video mute autoplay" loop id="phoneVid">
+                                        <video  autoplay muted loop id="phoneVid">
                                             <source src="images/Skip.mp4" type="video/mp4">
                                         </video>      
                                     </div>
@@ -373,7 +381,7 @@
                                     </div>  
                                     </div> 
                                     <div class="col-sm-6 col-md-6 col-xs-6 text-center">
-                                        <video mute autoplay" loop id="phoneVid">
+                                        <video  autoplay muted loop id="phoneVid">
                                             <source src="images/SBYSSnapchatHowTo2.mp4" type="video/mp4">
                                         </video> 
                                     </div>                                  
@@ -381,7 +389,7 @@
                                 <!-- left -->
                                 <!-- right -->
                                     <div id="cheek" class="col-sm-6 col-md-6 col-xs-6 text-center">
-                                        <video mute autoplay" loop id="phoneVid">
+                                        <video  autoplay muted loop id="phoneVid">
                                             <source src="images/SBYSSnapchatHowTo1.mp4" type="video/mp4">
                                         </video>      
                                     </div>
@@ -494,12 +502,12 @@
                                 <!-- left -->
                                 <!-- right -->
                                     <div id="mobileImage" class="col-sm-6 col-md-4 col-xs-12 text-center">
-                                        <video autoplay" loop id="phoneVid">
+                                        <video  autoplay muted loop id="phoneVid">
                                             <source src="images/Tab300x600.mp4" type="video/mp4">
                                         </video>
                                     </div>
                                     <div id="mobileImage" class="col-sm-6 col-md-4 col-xs-12 text-center">
-                                       <video autoplay" loop id="phoneVid">
+                                       <video  autoplay muted loop id="phoneVid">
                                             <source src="images/tab300x250.mp4" type="video/mp4">
                                         </video>
                                     </div>
@@ -616,9 +624,9 @@
                     <!-- <a href="index1.html" ><i class="fas fa-home fa-2x"></i></a> -->
                       <!-- details-image -->
                       <figure class="details-image" style="padding-bottom: 35px;">
-                          <video autoplay mute" loop id="myVideo"  style=" max-width: 100%;">
-                              <source src="images/SamLogo.mp4" type="video/mp4">
-                            </video>
+                          <video autoplay muted loop id="phoneVid">
+                             <source src="images/SamLogo.mp4" type="video/mp4">
+                          </video>
                         </figure>
                         <!-- details-image -->
                         <!-- content -->
