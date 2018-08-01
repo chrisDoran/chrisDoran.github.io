@@ -32,15 +32,15 @@ Version: 1.0
 
  * 3.0 - Header
 
- 	 * 1.0 - Header Logo
+   * 1.0 - Header Logo
 
-	 * 2.0 - Header Nav
+   * 2.0 - Header Nav
 
  * 4.0 - Main
 
- 	* 1.0 - Photo Gallery
+  * 1.0 - Photo Gallery
 
-	* 2.0 - Effect
+  * 2.0 - Effect
 
  * 6.0 - Footer
 
@@ -58,7 +58,7 @@ Version: 1.0
 
 /* ==========================================================================
 
-	Google Font
+  Google Font
 
 ========================================================================== */
 
@@ -81,7 +81,7 @@ Version: 1.0
 
 /* ==========================================================================
 
-	Base styles: opinionated defaults
+  Base styles: opinionated defaults
 
 ========================================================================== */
 
@@ -98,8 +98,10 @@ Version: 1.0
   margin-bottom: 40px;
   margin-left: 0;
  }
+
+
   #pop h1 {
-  	font-family: Sagona-Light;
+    font-family: Sagona-Light;
     font-weight: 150;
     margin-top: 17%;
     font-size: 5em;
@@ -108,8 +110,8 @@ Version: 1.0
     /*text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.29);*/
   }
   #pop h1 b {
-  	font-family: 'Montserrat', sans-serif;
-  	letter-spacing: -2px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -2px;
     /*font-weight: bolder;*/
     
   }
@@ -124,7 +126,7 @@ Version: 1.0
     /*text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.29); */
   }
   #pop .typewrite {
-  	font-family: 'Bebas Neue'
+    font-family: 'Bebas Neue'
     min-height: 30px;
     margin-top: -25px;
     font-size: 1em;
@@ -142,12 +144,11 @@ Version: 1.0
     margin-top: 25px
     /*max-width: 10px;*/
   }
-
   /*#pop a{}*/
 
 /*Button Tests*/
 .button2 {
-	color: #2F3036;
+  color: #2F3036;
     box-shadow: #2F3036 0 0px 0px 2px inset;
     font-size: 1.1em
     font-weight 1000;
@@ -172,6 +173,17 @@ Version: 1.0
     border-radius: 4px;
     padding: 15px 30px;
 }
+   @media screen and (max-width: 500px) {
+    #pop h1{    
+      font-size: 4em;   
+  }
+  #pop .typewrite {
+    font-size: 1em;  
+  }   
+  .button2{
+    font-size: .8em;
+  }
+}
 
   #iconList{
     font-size: 35px;
@@ -181,20 +193,20 @@ Version: 1.0
     margin-left: 5px;
   }
 
-  #test h2{  	
-  	font-size: 1.1em;
-  	font-weight: 50;
-  	/*margin-bottom: 35px*/
+  #test h2{   
+    font-size: 1.1em;
+    font-weight: 50;
+    /*margin-bottom: 35px*/
 
   }
 @media screen and (max-width: 710px) {
-    #test h2{  	
-	  	font-size: .7em;
-	  	font-weight: 50;  	
-	}
- 	#mobileImage {
- 		padding-top: 5%;
- 	} 	
+    #test h2{   
+      font-size: .7em;
+      font-weight: 50;    
+  }
+  #mobileImage {
+    padding-top: 5%;
+  }   
 }
 @media screen and (max-width: 995px) {
     #long{
@@ -237,8 +249,8 @@ Version: 1.0
 }
 
 #test i{
-	 margin-top: -10px;
-	 margin-bottom: 25px;
+   margin-top: -10px;
+   margin-bottom: 25px;
 }
 
 .center {
@@ -251,8 +263,8 @@ Version: 1.0
 
 
 .headerImage{
-	background-color: #231f20
-	margin-bottom: 35px;
+  background-color: #231f20
+  margin-bottom: 35px;
 }
 
 .modal {
@@ -309,7 +321,7 @@ a:focus, img:focus, button:focus, .btn:focus {outline:none;text-decoration: none
 
 /* ==========================================================================
 
-	Header styles
+  Header styles
 
 ========================================================================== */
 
@@ -401,7 +413,7 @@ z-index:2;transition: width 0.3s; z-index:1}
 
 /* ==========================================================================
 
-	Main Wrapper
+  Main Wrapper
 
 ========================================================================== */
 
@@ -411,7 +423,7 @@ z-index:2;transition: width 0.3s; z-index:1}
 
 /* ==========================================================================
 
-	Footer
+  Footer
 
 ========================================================================== */
 
@@ -443,7 +455,7 @@ z-index:2;transition: width 0.3s; z-index:1}
 
 /* ==========================================================================
 
-	Inner
+  Inner
 
 ========================================================================== */
 
@@ -459,16 +471,16 @@ z-index:2;transition: width 0.3s; z-index:1}
 
 /* ==========================================================================
 
-	Details Gallery
+  Details Gallery
 
 ========================================================================== */
 
 .details-content,.about-content,.contact-wrapper{ overflow:hidden}
 
 #phoneVid{
-	/*padding: 35px;*/
-	/*margin-left: 15px;*/
-	max-width: 100%;
+  /*padding: 35px;*/
+  /*margin-left: 15px;*/
+  max-width: 100%;
 }
 
 
@@ -490,7 +502,7 @@ z-index:2;transition: width 0.3s; z-index:1}
 
 /* ==========================================================================
 
-	About
+  About
 
 ========================================================================== */
 
@@ -502,7 +514,7 @@ z-index:2;transition: width 0.3s; z-index:1}
 
 /* ==========================================================================
 
-	Contact
+  Contact
 
 ========================================================================== */
 
@@ -542,7 +554,7 @@ z-index:2;transition: width 0.3s; z-index:1}
 
 /* ==========================================================================
 
-	Blog
+  Blog
 
 ========================================================================== */
 
