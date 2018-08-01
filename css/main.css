@@ -101,7 +101,7 @@ Version: 1.0
 
 
   #pop h1 {
-    font-family: Sagona-Light;
+    /*font-family: Sagona-Light;*/
     font-weight: 150;
     margin-top: 17%;
     font-size: 5em;
@@ -176,13 +176,13 @@ Version: 1.0
    @media screen and (max-width: 500px) {
     #pop h1{    
       font-size: 4em;   
-  }
-  #pop .typewrite {
-    font-size: 1em;  
-  }   
-  .button2{
-    font-size: .8em;
-  }
+    }
+    #pop .typewrite {
+      font-size: 1em;  
+    }   
+    .button2{
+      font-size: .8em;
+    }
 }
 
   #iconList{
